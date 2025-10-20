@@ -19,12 +19,12 @@
       </li>
       
       <li>
-        <h3>Base Beverage</h3>
+        <h3>Drink</h3>
         <template v-for="beverage in baseBeverages" :key="beverage">
           <label>
             <input
               type="radio"
-              name="baseBeverage"
+              name="drink"
               :id="`b${beverage}`"
               :value="beverage"
               v-model="currentBeverage"
@@ -74,15 +74,15 @@ import { ref } from 'vue';
 import Beverage from "./components/Beverage.vue";
 import { temps, currentTemp } from "./stores/beverage";
 
-// bev options
+// Base Beverage options
 const baseBeverages = ['Coffee', 'Green Tea', 'Black Tea'];
 const currentBeverage = ref('Coffee');
 
-// cream options
+// Creamer options
 const creamers = ['No Creamer', 'Milk', 'Cream', 'Half & Half'];
 const currentCreamer = ref('No Creamer');
 
-// syrup options
+// Syrup options
 const syrups = ['No Syrup', 'Vanilla', 'Caramel', 'Hazelnut'];
 const currentSyrup = ref('No Syrup');
 </script>
@@ -104,22 +104,29 @@ ul {
   padding: 20px;
   
   li {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     
     h3 {
       color: #fff;
-      margin-bottom: 10px;
+      margin-right: 15px;
+      margin-bottom: 0;
       font-size: 16px;
+      min-width: 120px;
     }
     
     label {
-      display: block;
+      display: inline-flex;
+      align-items: center;
       color: #fff;
-      margin-bottom: 8px;
+      margin-right: 15px;
+      margin-bottom: 0;
       cursor: pointer;
       
       input[type="radio"] {
-        margin-right: 8px;
+        margin-right: 5px;
         cursor: pointer;
       }
       
