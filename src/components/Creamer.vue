@@ -1,10 +1,13 @@
 <template>
   <div class="froth">
-    <div v-for=" in 5" class="foam"></div>
+    <div v-for="n in 5" :key="n" class="foam"></div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// No props needed - creamer stays default color
+</script>
+
 <style lang="scss" scoped>
 .froth {
   overflow: visible;
@@ -15,6 +18,7 @@
   background-color: #c6c6c6;
   animation: pour-tea 2s 2s forwards;
 }
+
 .foam {
   display: block;
   background: #e4e0d2;

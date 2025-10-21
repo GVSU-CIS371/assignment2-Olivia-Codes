@@ -10,7 +10,7 @@
         <Syrup />
       </template>
       <template v-slot:bottom>
-        <Base />
+        <Base :drink="drink" :creamer="creamer" />
       </template>
     </Contents>
   </Mug>
@@ -26,6 +26,8 @@ import Cold from "./Cold.vue";
 
 type Props = {
   isIced: boolean;
+  drink: string;
+  creamer: string;
 };
 defineProps<Props>();
 </script>
