@@ -79,15 +79,15 @@ import { ref } from 'vue';
 import Beverage from "./components/Beverage.vue";
 import { temps, currentTemp } from "./stores/beverage";
 
-// Base Beverage options
+
 const baseBeverages = ['Coffee', 'Green Tea', 'Black Tea'];
 const currentBeverage = ref('Coffee');
 
-// Creamer options
+
 const creamers = ['No Creamer', 'Milk', 'Cream', 'Half & Half'];
 const currentCreamer = ref('No Creamer');
 
-// Syrup options
+
 const syrups = ['No Syrup', 'Vanilla', 'Caramel', 'Hazelnut'];
 const currentSyrup = ref('No Syrup');
 </script>

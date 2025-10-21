@@ -24,13 +24,13 @@ defineProps<{
 
 .foam {
   display: block;
-  background: #f0ede3; /* Lighter bubbles */
+  background: #f0ede3; 
   border-radius: 50%;
   height: 40px;
   width: 40px;
   position: absolute;
   top: 0px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Add shadow for depth */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
 }
 
 .foam:nth-child(1) {

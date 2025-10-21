@@ -50,7 +50,7 @@ const drinkClass = computed(() => {
   overflow: hidden;
 }
 
-/* Dark colors without creamer */
+
 .baseBeverage.coffee {
   background-color: #3e2723;
 }
@@ -63,7 +63,7 @@ const drinkClass = computed(() => {
   background-color: #553f3b;
 }
 
-/* Light colors with creamer */
+
 .baseBeverage.coffee-with-creamer {
   background-color: #a68351ff;
 }
@@ -72,7 +72,7 @@ const drinkClass = computed(() => {
   background-color: #89d873ff;
 }
 
-/* Syrup stripes as separate layers inside base */
+
 .vanilla-stripes,
 .caramel-stripes,
 .hazelnut-stripes {
