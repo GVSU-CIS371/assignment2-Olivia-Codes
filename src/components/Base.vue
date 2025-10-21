@@ -1,5 +1,9 @@
 <template>
-  <div class="baseBeverage" :class="drinkClass"></div>
+  <div class="baseBeverage" :class="drinkClass">
+    <div v-if="syrup === 'Vanilla'" class="vanilla-stripes"></div>
+    <div v-if="syrup === 'Caramel'" class="caramel-stripes"></div>
+    <div v-if="syrup === 'Hazelnut'" class="hazelnut-stripes"></div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -8,21 +12,19 @@ import { computed } from 'vue';
 const props = defineProps<{
   drink: string;
   creamer: string;
+  syrup: string;
 }>();
 
 const drinkClass = computed(() => {
   const hasCreamer = props.creamer === 'Milk' || props.creamer === 'Cream' || props.creamer === 'Half & Half';
   
   if (hasCreamer) {
-    // Light colors when creamer is added
     if (props.drink === 'Green Tea') {
       return 'green-tea-with-creamer';
     } else {
-      // Coffee or Black Tea with creamer
       return 'coffee-with-creamer';
     }
   } else {
-    // Dark colors without creamer
     switch (props.drink) {
       case 'Coffee':
         return 'coffee';
@@ -45,27 +47,70 @@ const drinkClass = computed(() => {
   bottom: 0;
   animation: pour-tea 2s;
   z-index: 300;
+  overflow: hidden;
 }
 
 /* Dark colors without creamer */
 .baseBeverage.coffee {
-  background-color: #3e2723; /* Dark brown for coffee */
+  background-color: #3e2723;
 }
 
 .baseBeverage.green-tea {
-  background-color: #2d5016; /* Dark green for green tea */
+  background-color: #2d5016;
 }
 
 .baseBeverage.black-tea {
-  background-color: #553f3b; /* Dark brown for black tea */
+  background-color: #553f3b;
 }
 
 /* Light colors with creamer */
 .baseBeverage.coffee-with-creamer {
-  background-color: #a68351ff; /* Light brown for coffee/black tea with creamer */
+  background-color: #a68351ff;
 }
 
 .baseBeverage.green-tea-with-creamer {
-  background-color: #89d873ff; /* Light green for green tea with creamer */
+  background-color: #89d873ff;
+}
+
+/* Syrup stripes as separate layers inside base */
+.vanilla-stripes,
+.caramel-stripes,
+.hazelnut-stripes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.vanilla-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.3) 10px,
+    rgba(255, 255, 255, 0.3) 20px
+  );
+}
+
+.caramel-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(218, 165, 32, 0.5) 10px,
+    rgba(218, 165, 32, 0.5) 20px
+  );
+}
+
+.hazelnut-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(107, 68, 35, 0.6) 10px,
+    rgba(107, 68, 35, 0.6) 20px
+  );
 }
 </style>

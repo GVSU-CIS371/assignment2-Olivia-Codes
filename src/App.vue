@@ -4,6 +4,7 @@
       :isIced="currentTemp === 'Cold'" 
       :drink="currentBeverage" 
       :creamer="currentCreamer"
+      :syrup="currentSyrup"
     />
     <ul>
       <li>
