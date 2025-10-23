@@ -18,7 +18,7 @@ defineProps<{
   right: 0;
   height: 20%;
   width: 100%;
-  background-color: #d4cfc0; /* Slightly darker base */
+  background-color: #d4cfc0; 
   z-index: 10;
 }
 
