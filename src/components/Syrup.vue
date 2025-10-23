@@ -2,7 +2,12 @@
   <div class="syrup"></div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{
+  syrup: string;
+}>();
+</script>
+
 <style lang="scss" scoped>
 .syrup {
   transform: translateY(400%);
